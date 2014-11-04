@@ -13,4 +13,9 @@ class Idea
     @likes += 1
   end
 
+  def <=>(other)
+    likes <=> other.likes
+  end
+
+
 end

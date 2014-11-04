@@ -9,4 +9,21 @@ class IdeaTest < Minitest::Test
     assert_equal "title", idea.title
     assert_equal "description", idea.description
   end
+
+  def test_ideas_can_be_liked
+    idea = Idea.new("diet", "carrots and cucumbers")
+    assert_equal 0, idea.likes
+    idea.like!
+    assert_equal 1, idea.likes
+  end
+
+  def test_ideas_can_be_liked_more_than_once
+    idea = Idea.new("diet", "carrots and cucumbers")
+    assert_equal 0, idea.likes
+    idea.like!
+    assert_equal 1, idea.likes
+    idea.like!
+    assert_equal 2, idea.likes
+  end
+
 end

@@ -1,14 +1,25 @@
 class IdeaStore
 
+
   def self.save(idea)
-    @idea = idea
+    @all ||= []
+    idea.id = next_id
+    @all << idea
+    idea.id
   end
 
   def self.count
-    1
+    @all.count
   end
 
   def self.find(id)
-    @idea
+    @all.find do |idea|
+    idea.id == id
+    end
   end
+
+  def self.next_id
+    count + 1
+  end
+
 end

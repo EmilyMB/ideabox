@@ -1,6 +1,5 @@
 class IdeaStore
 
-
   def self.save(idea)
     @all ||= []
     idea.id = next_id

@@ -1,7 +1,6 @@
 class Idea
 
-  attr_reader :title, :description
-  attr_accessor :likes, :id
+  attr_accessor :title, :likes, :id, :description
 
   def initialize(title, description)
     @title       = title
@@ -17,6 +16,5 @@ class Idea
   def <=>(other)
     likes <=> other.likes
   end
-
 
 end

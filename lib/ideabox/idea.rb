@@ -17,4 +17,7 @@ class Idea
     likes <=> other.likes
   end
 
+  def new?
+    !id
+  end
 end

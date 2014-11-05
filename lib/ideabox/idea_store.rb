@@ -1,11 +1,18 @@
 class IdeaStore
 
+  def self.delete_all
+    @all = []
+  end
+
   def self.save(idea)
     @all ||= []
-    idea.id = next_id
-    @all << idea
+    if idea.new?
+      idea.id = next_id
+      @all << idea
+    end
     idea.id
   end
+
 
   def self.count
     @all.count

@@ -14,15 +14,12 @@ class IdeaStore
     idea.id
   end
 
-
   def self.count
-    @all.count
+    all.count
   end
 
   def self.find(id)
-    @all.find do |idea|
-    idea.id == id
-    end
+    all.find { |idea| idea.id == id }
   end
 
   def self.next_id
@@ -34,6 +31,7 @@ class IdeaStore
   end
 
   def self.delete(id)
-    @all.delete_if{ |idea| idea.id == id}
+    all.delete_if { |idea| idea.id == id }
   end
+
 end

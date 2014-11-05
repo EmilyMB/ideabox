@@ -1,5 +1,6 @@
 class IdeaStore
 
+
   def self.delete_all
     @all = []
   end
@@ -28,4 +29,11 @@ class IdeaStore
     count + 1
   end
 
+  def self.all
+    @all
+  end
+
+  def self.delete(id)
+    @all.delete_if{ |idea| idea.id == id}
+  end
 end

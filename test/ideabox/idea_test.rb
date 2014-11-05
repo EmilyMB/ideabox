@@ -55,4 +55,5 @@ class IdeaTest < Minitest::Test
     refute idea.new?
   end
 
+
 end
